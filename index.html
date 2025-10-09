@@ -482,7 +482,6 @@
       border-radius: 4px;
       transition: width 1.5s ease-in-out;
     }
-
     /* Projects Section - Enhanced with filter tabs */
     .projects {
       background: var(--dark-light);
@@ -541,19 +540,20 @@
 
     .project-image {
       height: 200px;
-      background: linear-gradient(135deg, var(--primary-gold), var(--primary-accent));
       position: relative;
       overflow: hidden;
     }
 
-    .project-image:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+    .project-image img {
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), transparent);
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
     }
 
     .project-content {
@@ -608,6 +608,7 @@
     .project-link:hover {
       color: var(--primary-gold);
     }
+
 
     /* Testimonials Section - New from reference site */
     .testimonials {
@@ -1092,74 +1093,85 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="section-title">
-        <h2>My Projects</h2>
-        <p>Some of my recent work that showcases my skills and expertise</p>
-      </div>
-      <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="web">Web Development</button>
-        <button class="filter-btn" data-filter="trading">Trading Tools</button>
-        <button class="filter-btn" data-filter="python">Python Projects</button>
-      </div>
-      <div class="project-grid">
-        <div class="project-card" data-category="web trading">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <h3>EliteTrader Journal</h3>
-            <p>A comprehensive trading journal application that helps traders track performance, analyze emotions, and optimize strategies using Python and Flask.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Flask</span>
-              <span class="project-tag">SQLite</span>
-              <span class="project-tag">Chart.js</span>
-            </div>
-            <div class="project-links">
-              <a href="https://elitejournal.pythonanywhere.com/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-            </div>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>My Projects</h2>
+      <p>Some of my recent work that showcases my skills and expertise</p>
+    </div>
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
+      <button class="filter-btn" data-filter="trading">Trading Tools</button>
+      <button class="filter-btn" data-filter="python">Python Projects</button>
+    </div>
+    <div class="project-grid">
+      <!-- EliteTrader Journal -->
+      <div class="project-card" data-category="web trading">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="EliteTrader Journal Dashboard">
+        </div>
+        <div class="project-content">
+          <h3>EliteTrader Journal</h3>
+          <p>A comprehensive trading journal application that helps traders track performance, analyze emotions, and optimize strategies using Python and Flask.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">SQLite</span>
+            <span class="project-tag">Chart.js</span>
+          </div>
+          <div class="project-links">
+            <a href="https://elitejournal.pythonanywhere.com/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
           </div>
         </div>
-        <div class="project-card" data-category="web python">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <h3>QR Attendance Tracker</h3>
-            <p>A smart system for tracking student attendance using QR codes with a Python backend and real-time reporting dashboard.</p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Flask</span>
-              <span class="project-tag">OpenCV</span>
-              <span class="project-tag">Bootstrap</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-            </div>
+      </div>
+
+      <!-- QR Attendance Tracker -->
+      <div class="project-card" data-category="web python">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="QR Attendance Tracker System">
+        </div>
+        <div class="project-content">
+          <h3>QR Attendance Tracker</h3>
+          <p>A smart system for tracking student attendance using QR codes with a Python backend and real-time reporting dashboard.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">OpenCV</span>
+            <span class="project-tag">Bootstrap</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
           </div>
         </div>
-        <div class="project-card" data-category="trading web">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <h3>Trading Algorithm Dashboard</h3>
-            <p>An interactive dashboard for monitoring and managing algorithmic trading strategies with real-time market data and performance metrics.</p>
-            <div class="project-tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">WebSockets</span>
-              <span class="project-tag">TradingView</span>
-              <span class="project-tag">Chart.js</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-              <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-            </div>
+      </div>
+
+      <!-- Trading Algorithm Dashboard -->
+      <div class="project-card" data-category="trading web">
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Trading Algorithm Dashboard">
+        </div>
+        <div class="project-content">
+          <h3>Trading Algorithm Dashboard</h3>
+          <p>An interactive dashboard for monitoring and managing algorithmic trading strategies with real-time market data and performance metrics.</p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">WebSockets</span>
+            <span class="project-tag">TradingView</span>
+            <span class="project-tag">Chart.js</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials">
